@@ -12,16 +12,20 @@ function dismissToast() {
 </script>
 
 <template lang="pug">
-.toast
-  p 1작업을 완료했습니다
-  button(type="button" @click="dismissToast()")
-    p 실행 취소
-    img(src="@/assets/cancelicon.svg")
+.toastwrapper
+  .toast
+    p 1작업을 완료했습니다
+      button(type="button" @click="dismissToast()")
+        p 실행 취소
+        img(src="@/assets/cancelicon.svg")
 </template>
 
 <style scoped lang="less">
+
+
 .toast {
-  position: relative;
+  background-color: white;
+  position: fixed;
   bottom: 30px;
   margin: 0 auto;
   margin-top: auto;
@@ -51,6 +55,7 @@ function dismissToast() {
 
 p {
   padding-left: 5px;
+  display: flex;
 }
 
 button {

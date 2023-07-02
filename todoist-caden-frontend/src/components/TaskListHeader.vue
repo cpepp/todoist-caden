@@ -1,25 +1,22 @@
-<script setup>
-import { ref, onMounted } from 'vue'
-const today = new Date();
-const month = ref('');
-const date = ref('');
-const day = ref('');
-
-const KRDay = {
-    0: '일',
-    1: '월',
-    2: '화',
-    3: '수',
-    4: '목',
-    5: '금',
-    6: '토'
+<script>
+export default {
+    data() {
+        return {
+            today: new Date(),
+            month: '',
+            date: '',
+            day: '',
+            locale: 'ko-KR',
+            options: { weekday: 'short' }
+        }
+    },
+    mounted() {
+        const today = new Date();
+        this.month = today.getMonth() + 1;
+        this.date = today.getDate();
+        this.day = today.toLocaleString(this.locale, this.options);
+    }
 }
-
-onMounted(() => {
-    month.value = today.getMonth() + 1;
-    date.value = today.getDate();
-    day.value = KRDay[today.getDay()];
-})
 </script>
 
 <template lang="pug">

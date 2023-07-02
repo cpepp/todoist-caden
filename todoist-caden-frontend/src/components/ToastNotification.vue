@@ -1,5 +1,5 @@
 <script setup>
-const emit = defineEmits(['onDismiss']);
+const emit = defineEmits(['onDismiss'])
 
 /**
  * Emits to let parent
@@ -21,8 +21,6 @@ function dismissToast() {
 </template>
 
 <style scoped lang="less">
-
-
 .toast {
   background-color: white;
   position: fixed;

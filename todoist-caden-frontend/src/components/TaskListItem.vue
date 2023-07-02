@@ -83,7 +83,7 @@ li(:key="task._id" @mouseenter="onHover($event)" @mouseleave="onHover($event)")
         button(type="button" @mouseenter="changeIcon($event, task)" @mouseleave="changeIcon($event, task)" @click="taskUpdate(task)" :style="{cursor: pointer}" :disabled="task.completed")
             img(v-if="!task.completed && !mouseOn" src="@/assets/defaultcheckboxicon.svg")
             img(v-else-if="task.completed || mouseOn" src="@/assets/activecheckboxicon.svg")
-        .taskInfo {{ task.taskName }}
+        .taskInfo {{ task.name }}
         button(type="button" @click="taskDelete(task._id)" :style="{'visibility' : deleteVisible}")
             img(src="@/assets/deleteicon.svg")
 </template>

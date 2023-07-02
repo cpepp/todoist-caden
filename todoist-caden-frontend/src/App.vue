@@ -7,10 +7,6 @@ import ToastNotification from './components/ToastNotification.vue';
 
 const toast = ref(false);
 
-/**
- * Function to show the toast.
- * Times out after 2 seconds.
- */
 function showToast() {
   toast.value = true;
   setTimeout(() => toast.value = false, 2000);

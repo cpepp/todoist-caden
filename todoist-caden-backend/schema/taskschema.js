@@ -5,9 +5,8 @@ const Schema = mongoose.Schema;
 module.exports = mongoose.model(
   "Task",
   new Schema({
-    taskId: { type: Number },
-    taskName: { type: String },
-    completed: { type: Boolean },
+    name: { type: String, required: true },
+    completed: { type: Boolean, default: false },
   }),
   "task"
 );
